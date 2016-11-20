@@ -1,0 +1,23 @@
+<template name="task">
+    <li class="{{#if checked}}checked{{/if}} {{#if private}}private{{/if}}">
+        <button class="delete c-button--close">&times;</button>
+
+        <label class="c-toggle c-toggle--brand">
+            <input type="checkbox" checked="{{checked}}" class="toggle-checked " />
+            <div class="c-toggle__track">
+                <div class="c-toggle__handle"></div>
+            </div>
+            <span class="text"><strong>{{username}}</strong> - {{text}}</span>
+            {{#if isOwner}}
+                {{#if private}}
+                    <button class="toggle-private  c-button c-button--ghost-error">Private</button>
+                {{else}}
+                    <button class="toggle-private c-button c-button--ghost-info">Public</button>
+                {{/if}}
+            {{/if}}
+        </label>
+
+
+
+    </li>
+</template>
